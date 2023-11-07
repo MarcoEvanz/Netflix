@@ -4,6 +4,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model List<Netflix.Models.Phim>
+<style>
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+        margin: 0;
+        text-align: center;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        width: 300px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        outline: none;
+    }
+
+        input[type="text"]::placeholder {
+            color: #ccc;
+        }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #e50914; /* Màu đỏ của Netflix */
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        margin-left: 10px;
+        cursor: pointer;
+        outline: none;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #ff3239; /* Màu đỏ đậm khi di chuột qua */
+        }
+</style>
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav">
@@ -17,21 +64,26 @@
             </ul>
         </div>
         <div class="col-sm-8 text-left">
+            <br />
             <h2>Tìm Kiếm Phim</h2>
-            @using (Html.BeginForm("TimKiem", "Home", FormMethod.Get))
-             {
-                @Html.TextBox("searching")<input type="submit" value="Search" />
-             }
+            <div class="search-container">
+                @using (Html.BeginForm("TimKiem", "Home", FormMethod.Get))
+                {
+                    @Html.TextBox("searching", null, new { placeholder = "Tìm kiếm phim..." })
+                    <input type="submit" value="Search" />
+                }
+            </div>
             <hr />
             @if (Model.Count() == 0)
-             {
+            {
                 <tr colspan="3" style="color:red">
                     Không có Kết quả
                 </tr>
-             }
-             else {
-             foreach (var phim in Model)
-             {
+            }
+            else
+            {
+                foreach (var phim in Model)
+                {
                     <div class="card">
                         <div class="card-image">
                             <img src="~/Content/PhimIMG/@phim.HinhMinhHoa" alt="Video Image">
@@ -45,7 +97,7 @@
                         </button>
                     </div>
                 }
-             }
+            }
         </div>
     </div>
 </div>
