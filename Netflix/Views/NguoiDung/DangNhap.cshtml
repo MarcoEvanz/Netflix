@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .bodyDangNhap {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-container {
+        text-align: center;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .imgDangKy {
+        max-width: 100px;
+    }
+
+    .login-form {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .inputDangNhap {
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+    }
+
+    .login-button {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #e50914;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .login-button:hover {
+            background-color: #d10813;
+        }
+
+    .forgot-password {
+        font-size: 14px;
+        text-align: center;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .red-title {
+        color: #e50914; /* Màu đỏ */
+        font-size: 24px; /* Kích thước phông chữ */
+        text-align: center; /* Căn giữa ngang */
+        margin-top: 10px; /* Khoảng cách phía trên */
+    }
+</style>
+<div class="bodyDangNhap">
+    <div class="login-container">
+        <div class="header">
+            <img class="imgDangKy" src="~/Content/LogoIMG/NetflixLogo.png" alt="Netflix Logo">
+        </div>
+        <h2 class="red-title">@ViewBag.ThongBao</h2>
+        @using (Html.BeginForm("DangNhap", "NguoiDung"))
+        {
+            <div class="login-form">
+                <h1>Đăng nhập vào tài khoản của bạn</h1>
+                <form>
+                    <div>
+                        @Html.TextBox("TenDangNhap", null, new
+                        {
+                            @class = "inputDangNhap input-field",
+                            @id = "TenDangNhap",
+                            required = "required",
+                            @placeholder = "Tên Đăng Nhập"
+                        })
+                    </div>
+                    <div>
+                        @Html.TextBox("MatKhau", null, new
+                        {
+                            @class = "inputDangNhap input-field",
+                            @id = "MatKhau",
+                            required = "required",
+                            @placeholder = "Mật Khẩu"
+                        })
+                    </div>
+                    <button type="submit" class="login-button">Đăng nhập</button>
+                </form>
+            </div>
+        }
+    </div>
+</div>

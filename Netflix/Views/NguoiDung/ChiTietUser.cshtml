@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Netflix.Models.KhachHang
+<style>
+    .bodyChiTiet {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .Detail-container {
+        text-align: center;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .imgChiTiet {
+        max-width: 100px;
+    }
+
+    .Detail-form {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .Detail {
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+    }
+
+    .logout-button {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #e50914;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .logout-button:hover {
+            background-color: #d10813;
+        }
+        .logout-button a{
+            color:white
+        }
+</style>
+<div class="bodyChiTiet">
+    <div class="Detail-container">
+        <div class="header">
+            <img class="imgChiTiet" src="~/Content/LogoIMG/NetflixLogo.png" alt="Netflix Logo">
+        </div>      
+        <div class="Detail-form">
+            <h1>Thông Tin Chi Tiết Tài Khoản</h1>
+            <p class="Detail">Mã KH: @Model.MaKH</p>
+            <p class="Detail">Tên Đăng Nhập: @Model.TenDangNhap</p>
+            <p class="Detail">Họ Tên Khách Hàng: @Model.HoTenKH</p>
+            <p class="Detail">Email: @Model.Email</p>
+            <button class="logout-button" type="button">@Html.ActionLink("Đăng Xuất", "Logout", "NguoiDung")</button>
+        </div>
+    </div>
+</div>

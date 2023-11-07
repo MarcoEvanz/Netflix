@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .bodyDangKy {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('background.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .signup-container {
+        text-align: center;
+    }
+
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .imgDangKy {
+        max-width: 100px;
+    }
+
+    .signup-form {
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .inputDangKy {
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #333;
+        color: #fff;
+        width: 100%;
+    }
+
+    .signup-button {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #e50914;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+
+        .signup-button:hover {
+            background-color: #d10813;
+        }
+
+    .terms {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+</style>
+<div class="bodyDangKy">
+    <div class="signup-container">
+        <div class="header">
+            <img class="imgDangKy" src="~/Content/LogoIMG/NetflixLogo.png" alt="Netflix Logo">
+        </div>
+        @using (Html.BeginForm("DangKy", "NguoiDung"))
+        {
+            @Html.ValidationSummary(true)
+            <div class="signup-form">
+                <h1>Đăng ký ngay!</h1>
+                <p>Chào mừng bạn đến với Netflix.</p>
+                <form>
+                    <div>
+                        @Html.TextBox("HoTenKH", null, new
+                        {
+                        @class = "inputDangKy input-field",
+                        @id = "HoTenKH",
+                        required = "required",
+                        @placeholder = "Họ Và Tên"})
+                    </div>
+                    <div>
+                        @Html.TextBox("TenDangNhap", null, new
+                        {
+                        @class = "inputDangKy input-field",
+                        @id = "TenDangNhap",
+                        required = "required",
+                        @placeholder = "Tên Đăng Nhập"
+                        })
+                    </div>
+                    <div>
+                        @Html.TextBox("MatKhau", null, new
+                        {
+                        @class = "inputDangKy input-field",
+                        @id = "MatKhau",
+                        required = "required",
+                        @placeholder = "Mật Khẩu"
+                        })
+                    </div>
+                    <div>
+                        @Html.TextBox("Email", null, new
+                        {
+                        @class = "inputDangKy input-field",
+                        @id = "Email",
+                        type= "email",
+                        required = "required",
+                        @placeholder = "Email"
+                        })
+                    </div>
+                    <button type="submit" class="signup-button">Đăng ký</button>
+                </form>
+                <p class="terms">Bằng cách đăng ký, bạn đồng ý với <a href="#">Điều khoản sử dụng</a> và <a href="#">Chính sách về quyền riêng tư</a> của chúng tôi.</p>
+            </div>
+        }
+    </div>
+</div>

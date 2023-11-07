@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "ChiTietPhim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Netflix.Models.Phim
+<style>
+    .bodyDetail {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        display: flex;
+    }
+
+    #left {
+        width: 60%;
+        background-color: #fff;
+        padding: 20px;
+        border: 2px solid #ddd; /* Thêm viền cho phần trái */
+        border-radius: 10px; /* Bo tròn góc viền */
+    }
+
+    #right {
+        width: 40%;
+        background-color: #fff;
+        padding: 20px;
+        border: 2px solid #ddd; /* Thêm viền cho phần phải */
+        border-radius: 10px; /* Bo tròn góc viền */
+        text-align:center;
+    }
+
+    #movie-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #movie-details {
+        margin-top: 20px;
+    }
+
+    #view-button {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    #linkwhite{
+        color:white
+    }
+</style>
+<div class="bodyDetail">
+    <div id="left">
+        <h1>@Model.TenPhim</h1>
+        <hr />
+        <p>@Model.ChiTietPhim</p>
+    </div>
+    <div id="right">
+        <img id="movie-image" src="~/Content/PhimIMG/@Model.HinhMinhHoa" alt="Hình ảnh phim">
+        <div id="movie-details">
+            <p><strong>Thể Loại:</strong> @Model.TheLoai</p>
+            <p><strong>Năm Sản Xuất:</strong> @Model.NamSanXuat</p>
+            <p><strong>Đạo Diễn:</strong> @Model.DaoDien</p>
+        </div>
+        <button id="view-button"><a id="linkwhite" href="@Url.Action("XemPhim", "Home", new { id = Model.IdPhim })">Xem Ngay</a></button>
+    </div>
+</div>
