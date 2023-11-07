@@ -17,25 +17,9 @@
                 </a>
             </div>
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Trang Chủ", "TrangChu", "Home")</li>
-                <li><a href="#">Phim mới</a></li>
-                <li><a href="#">Phim lẻ</a></li>
-                <li><a href="#">Phim bộ</a></li>
-                <li>@Html.ActionLink("Tìm Kiếm", "TimKiem", "Home")</li>
+                <li>@Html.ActionLink("Quản Lý Phim", "QuanLyPhim", "Admin")</li>
+                <li>@Html.ActionLink("Quản Lý User", "QuanLyUser", "Admin")</li>
             </ul>
-            @if (@Session["TaiKhoan"] == null)
-            {
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Đăng Nhập", "DangNhap", "NguoiDung")</li>
-                    <li>@Html.ActionLink("Đăng Ký", "DangKy", "NguoiDung")</li>
-                </ul>
-            }
-            else
-            {
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="@Url.Action("ChiTietUser", "NguoiDung", new { tkkh = Session["TaiKhoan"] })"><span class="glyphicon glyphicon-user"></span>@Session["TaiKhoan"]</a></li>
-                </ul>
-            }
         </div>
     </div>
     @RenderBody()

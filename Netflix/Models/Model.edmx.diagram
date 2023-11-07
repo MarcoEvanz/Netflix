@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab1225b5b9cd435c95f6553b031fe425" Name="Diagram1">
+      <Diagram DiagramId="b778489fae0b447d80e52468489a7500" Name="Diagram1">
         <EntityTypeShape EntityType="XemPhimModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="XemPhimModel.Phim" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>

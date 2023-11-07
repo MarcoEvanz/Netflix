@@ -61,6 +61,8 @@ namespace Netflix.Controllers
                     ModelState.AddModelError(string.Empty, "Tên đăng nhập không được để trống");
                 if (string.IsNullOrEmpty(kh.MatKhau))
                     ModelState.AddModelError(string.Empty, "Mật khẩu không được để trống");
+                if (kh.TenDangNhap == "Admin" && kh.MatKhau == "Admin")
+                    return RedirectToAction("QuanLyPhim", "Admin");
                 if (ModelState.IsValid)
                 {
                     var khach = database.KhachHangs.FirstOrDefault(k => k.TenDangNhap == kh.TenDangNhap && k.MatKhau == kh.MatKhau);
