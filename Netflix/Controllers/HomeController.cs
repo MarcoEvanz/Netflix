@@ -19,7 +19,10 @@ namespace Netflix.Controllers
                 return View(items);
             }
         }
-
+        public ActionResult TimKiem(string searching)
+        {
+            return View(database.Phims.Where(x => x.TenPhim.Contains(searching) || searching == null).ToList());
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
