@@ -46,5 +46,55 @@ namespace Netflix.Controllers
             var Phim = database.Phims.FirstOrDefault(s => s.IdPhim == Id);
             return View(Phim);
         }
+        public ActionResult HanhDong()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.Phims.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult Anime()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.Phims.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult KinhDi()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.Phims.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult HaiHuoc()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.Phims.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult HoatHinh()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.Phims.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult TroGiup()
+        {
+
+            return View();
+        }
     }
 }

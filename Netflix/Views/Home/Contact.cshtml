@@ -1,17 +1,56 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<style>
+    .bodyContact {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    .headerContact {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    .h1Contact {
+        font-size: 2em;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+        font-size: 1.2em;
+    }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+</style>
+<Div class="bodyContact">
+    <header class="headerContact">
+        <h1 class="h1Contact">Thông tin liên hệ</h1>
+    </header>
+    <div class="container">
+        <p>Chúng tôi rất vui khi bạn muốn liên hệ với chúng tôi. Dưới đây là thông tin liên hệ của chúng tôi:</p>
+        <div class="contact-info">
+            <p><strong>Địa chỉ:</strong> 828 Su Van Hanh, District 10, Ho Chi Minh City, Vietnam.</p>
+            <p><strong>Điện thoại:</strong> 0828845872</p>
+            <p><strong>Email:</strong> <a href="mailto:info@Netflix.com">info@netflix.com</a></p>
+        </div>
+    </div>
+</Div>

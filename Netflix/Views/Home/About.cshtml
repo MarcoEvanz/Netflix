@@ -1,7 +1,44 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<style>
+    .bodyAbout {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
 
-<p>Use this area to provide additional information.</p>
+    .headerAbout {
+        background-color: #e50914;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .h1About {
+        font-size: 2em;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+</style>
+<div class="bodyAbout">
+    <header class="headerAbout">
+        <h1 class="h1About">Về Netflix</h1>
+    </header>
+    <div class="container">
+        <p>Netflix là một dịch vụ trực tuyến cung cấp phim, chương trình TV, và nhiều nội dung giải trí khác cho người dùng trên khắp thế giới. Với một thư viện phong phú và nhiều tính năng thuận tiện, Netflix đã trở thành một trong những dịch vụ phát trực tuyến phổ biến nhất trên thế giới.</p>
+        <p>Chúng tôi cam kết cung cấp cho bạn những trải nghiệm giải trí tốt nhất thông qua các bộ phim và chương trình TV đa dạng, độc quyền và phù hợp với mọi đối tượng.</p>
+        <p>Nếu bạn có bất kỳ câu hỏi hoặc phản hồi nào về dịch vụ của chúng tôi, vui lòng liên hệ với chúng tôi qua <a href="mailto:info@netflix.com">info@netflix.com</a>.</p>
+    </div>
+</div>

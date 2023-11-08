@@ -12,15 +12,12 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header" style="margin-top:10px">
-                <a class="logo" href="#">
+                <a class="logo" href="~/Home">
                     <img src="~/Content/LogoIMG/NetflixLogo.png" alt="Netflix">
                 </a>
             </div>
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Trang Chủ", "TrangChu", "Home")</li>
-                <li><a href="#">Phim mới</a></li>
-                <li><a href="#">Phim lẻ</a></li>
-                <li><a href="#">Phim bộ</a></li>
                 <li>@Html.ActionLink("Tìm Kiếm", "TimKiem", "Home")</li>
             </ul>
             @if (@Session["TaiKhoan"] == null)
@@ -43,13 +40,9 @@
         <div class="footer-container">
             <div class="footer-links">
                 <ul>
-                    <li><a href="#">Về Netflix</a></li>
-                    <li><a href="#">Việc làm</a></li>
-                    <li><a href="#">Thông tin liên hệ</a></li>
-                    <li><a href="#">Quản lý tài khoản</a></li>
-                    <li><a href="#">Chế độ sử dụng</a></li>
-                    <li><a href="#">Bảo mật</a></li>
-                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                    <li>@Html.ActionLink("Về Netflix", "About", "Home")</li>
+                    <li>@Html.ActionLink("Thông Tin Liên hệ", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Trung Tâm Trợ Giúp", "TroGiup", "Home")</li>
                 </ul>
             </div>
             <div class="social-links">

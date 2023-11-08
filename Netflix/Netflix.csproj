@@ -245,6 +245,12 @@
     <Content Include="Views\Admin\AddKhachHang.cshtml" />
     <Content Include="Views\Admin\SuaKhachHang.cshtml" />
     <Content Include="Views\Admin\XoaKhachHang.cshtml" />
+    <Content Include="Views\Home\HanhDong.cshtml" />
+    <Content Include="Views\Home\Anime.cshtml" />
+    <Content Include="Views\Home\KinhDi.cshtml" />
+    <Content Include="Views\Home\HaiHuoc.cshtml" />
+    <Content Include="Views\Home\HoatHinh.cshtml" />
+    <Content Include="Views\Home\TroGiup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

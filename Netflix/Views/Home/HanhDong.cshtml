@@ -52,51 +52,11 @@
             </ul>
         </div>
         <div class="col-sm-8 text-left">
-            <h2>Hành Động, Hài Hước</h2>
+            <h2>Hành Động</h2>
             <hr />
             @foreach (var phim in Model)
             {
-                if (phim.TheLoai == "Hành Động" || phim.TheLoai == "Hài Hước")
-                {
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="~/Content/PhimIMG/@phim.HinhMinhHoa" alt="Video Image">
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">@phim.TenPhim</h2>
-                            <p class="card-category">@phim.TheLoai</p>
-                        </div>
-                        <button class="card-button">
-                            <a href="@Url.Action("ChiTietPhim", "Home", new { id =  phim.IdPhim})">Xem Ngay</a>
-                        </button>
-                    </div>
-                }
-            }
-            <h2>Anime, Hoạt Hình</h2>
-            <hr />
-            @foreach (var phim in Model)
-            {
-                if (phim.TheLoai == "Anime" || phim.TheLoai == "Hoạt Hình")
-                {
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="~/Content/PhimIMG/@phim.HinhMinhHoa" alt="Video Image">
-                        </div>
-                        <div class="card-content">
-                            <h2 class="card-title">@phim.TenPhim</h2>
-                            <p class="card-category">@phim.TheLoai</p>
-                        </div>
-                        <button class="card-button">
-                            <a href="@Url.Action("ChiTietPhim", "Home", new { id =  phim.IdPhim})">Xem Ngay</a>
-                        </button>
-                    </div>
-                }
-            }
-            <h2>Kinh Dị</h2>
-            <hr />
-            @foreach (var phim in Model)
-            {
-                if (phim.TheLoai == "Kinh Dị")
+                if (phim.TheLoai == "Hành Động")
                 {
                     <div class="card">
                         <div class="card-image">
@@ -113,6 +73,5 @@
                 }
             }
         </div>
-
     </div>
 </div>
