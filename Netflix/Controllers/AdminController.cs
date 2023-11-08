@@ -11,6 +11,7 @@ namespace Netflix.Controllers
     {
         XemPhimEntities database = new XemPhimEntities();
         // GET: Admin
+        //Hiện thông tin các bộ Phim
         public ActionResult QuanLyPhim()
         {
             using (var dbContext = new XemPhimEntities())
@@ -89,6 +90,79 @@ namespace Netflix.Controllers
             database.SaveChanges();
             database.Dispose();
             return Redirect("QuanLyPhim");
+        }
+        public ActionResult QuanLyUser()
+        {
+            using (var dbContext = new XemPhimEntities())
+            {
+                var items = dbContext.KhachHangs.ToList();
+
+                return View(items);
+            }
+        }
+        public ActionResult AddKhachHang(KhachHang khachHang)
+        {
+            if (ModelState.IsValid)
+            {
+                if (String.IsNullOrEmpty(khachHang.TenDangNhap))
+                    ModelState.AddModelError(String.Empty, "Tên Đăng Nhập không được để trống");
+                if (String.IsNullOrEmpty(khachHang.HoTenKH))
+                    ModelState.AddModelError(String.Empty, "Họ Và Tên không được để trống");
+                if (String.IsNullOrEmpty(khachHang.MatKhau))
+                    ModelState.AddModelError(String.Empty, "Mật Khẩu không được để trống");
+                if (String.IsNullOrEmpty(khachHang.Email))
+                    ModelState.AddModelError(String.Empty, "Email không được để trống");
+
+                if (ModelState.IsValid)
+                {
+                    database.KhachHangs.Add(khachHang);
+                    database.SaveChanges();
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("QuanLyUser");
+        }
+        public ActionResult SuaKhachHang(int Id)
+        {
+            XemPhimEntities database = new XemPhimEntities();
+            KhachHang e = database.KhachHangs.Where(i => i.MaKH == Id).FirstOrDefault();
+
+            database.Dispose();
+            return View(e);
+        }
+        public ActionResult LuuKhachHang(KhachHang s)
+        {
+            XemPhimEntities database = new XemPhimEntities();
+            KhachHang e = database.KhachHangs.Where(i => i.MaKH == s.MaKH).FirstOrDefault();
+             e.TenDangNhap = s.TenDangNhap;
+            e.HoTenKH = s.HoTenKH;
+            e.MatKhau = s.MatKhau;
+            e.Email = s.Email;
+
+            database.SaveChanges();
+            database.Dispose();
+            return Redirect("QuanLyUser");
+        }
+        public ActionResult XoaKhachHang(int Id)
+        {
+            XemPhimEntities database = new XemPhimEntities();
+            KhachHang e = database.KhachHangs.Where(i => i.MaKH == Id).FirstOrDefault();
+
+            database.Dispose();
+            return View(e);
+        }
+        public ActionResult XacNhanXoaKhachHang(KhachHang s)
+        {
+            XemPhimEntities database = new XemPhimEntities();
+            KhachHang e = database.KhachHangs.Where(i => i.MaKH == s.MaKH).FirstOrDefault();
+
+            database.KhachHangs.Remove(e);
+            database.SaveChanges();
+            database.Dispose();
+            return Redirect("QuanLyUser");
         }
     }
 }

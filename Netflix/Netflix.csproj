@@ -241,6 +241,10 @@
     <Content Include="Views\Admin\AddPhim.cshtml" />
     <Content Include="Views\Admin\SuaPhim.cshtml" />
     <Content Include="Views\Admin\XoaPhim.cshtml" />
+    <Content Include="Views\Admin\QuanLyUser.cshtml" />
+    <Content Include="Views\Admin\AddKhachHang.cshtml" />
+    <Content Include="Views\Admin\SuaKhachHang.cshtml" />
+    <Content Include="Views\Admin\XoaKhachHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
